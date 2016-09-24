@@ -34,17 +34,24 @@
 			background-color: #EB4F38;
 		}
 		.info{
-			padding: 20px;
-			height: 10px;
+			width: 20px;
+			height: 30px;
 			float: left;
-			display: block;
+			margin-top: 10px;
 			cursor: pointer;
 			background-color: #EA8010;
-			margin: 10px;
-			margin-top: 50px;
+			margin-left: 20px;
+			vertical-align: bottom;
 		}
 		#fir{
-			margin-left: 80px;
+			/*margin-left: 80px;*/
+		}
+		#container{
+			float: left;
+			display: block;
+			margin-left: 5px;
+			height: 300px;
+			width: 40px;
 		}
 	</style>
 	<script>
@@ -58,32 +65,32 @@
 
 			btns[0].onclick = function(){
 				for(var i=contents.length-1; i>0; i--){
-					contents[i].innerHTML = contents[i-1].innerHTML;
+					contents[i].style.width = contents[i-1].style.width;
 				}
-				contents[0].innerHTML = sth.value;
+				contents[0].style.width = sth.value * 10 + "px";
 				sth.value = "";
 			};
 
 			btns[1].onclick = function(){
 				for(var i=0; i<contents.length-1; i++){
-					contents[i].innerHTML = contents[i+1].innerHTML;
+					contents[i].style.width = contents[i+1].style.width;
 				}
-				contents[contents.length-1].innerHTML = sth.value;
+				contents[contents.length-1].style.width = sth.value * 10 + "px";
 				sth.value = "";
 			};
 
 			btns[2].onclick = function(){
 				for(var i=0; i<contents.length-1; i++){
-					contents[i].innerHTML = contents[i+1].innerHTML;
+					contents[i].style.width = contents[i+1].style.width;
 				}
-				contents[contents.length-1].innerHTML = "";
+				contents[contents.length-1].style.width = "0px";
 			};
 
 			btns[3].onclick = function(){
 				for(var i=contents.length-1; i>0; i--){
-					contents[i].innerHTML = contents[i-1].innerHTML;
+					contents[i].style.width = contents[i-1].style.width;
 				}
-				contents[0].innerHTML = "";
+				contents[0].style.width = "0px";
 			};
 
 		}
@@ -97,15 +104,16 @@
 	<div class="btn">前出</div>
 	<div class="btn">后出</div>
 
-	<div class="info" id="fir"> </div>
-	<div class="info"> </div>
-	<div class="info"> </div>
-	<div class="info"> </div>
-	<div class="info"> </div>
-	<div class="info"> </div>
-	<div class="info"> </div>
-	<div class="info"> </div>
-
+	<div id="container">
+		<div class="info" id="fir"> </div>
+		<div class="info"> </div>
+		<div class="info"> </div>
+		<div class="info"> </div>
+		<div class="info"> </div>
+		<div class="info"> </div>
+		<div class="info"> </div>
+		<div class="info"> </div>
+	</div>
 
 </body>
 </html>
